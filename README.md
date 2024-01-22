@@ -2,7 +2,7 @@
 
 ReFlect ports block variants added in 1.13 and 1.14, including trapdoors, buttons, stripped logs, prismarine slabs, walls and signs, to 1.12.2.
 
-ReWind is a part of [Re:1.12.2](https://github.com/re-1122) project.
+ReFlect is a part of [Re:1.12.2](https://github.com/re-1122) project.
 
 ## Installation
 
@@ -15,4 +15,4 @@ ReWind is a part of [Re:1.12.2](https://github.com/re-1122) project.
 
 ## License
 
-ReWind is licensed under Mozilla Public License 2.0.
+ReFlect is licensed under Mozilla Public License 2.0.
