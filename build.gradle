@@ -44,6 +44,10 @@ minecraft {
 
 repositories {
     maven { url = 'https://repo.spongepowered.org/maven' }
+
+    flatDir {
+        dir 'libs'
+    }
 }
 
 configurations {
@@ -62,7 +66,7 @@ dependencies {
 
     annotationProcessor 'org.spongepowered:mixin:0.8.3:processor'
 
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fg.deobf('com.koyomiji:refound:0.2.0')
 }
 
 processResources {
