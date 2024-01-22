@@ -1,22 +1,16 @@
 package com.koyomiji.reflect;
 
 import com.koyomiji.reflect.proxy.CommonProxy;
-import com.koyomiji.reflect.setup.Assets;
 import com.koyomiji.reflect.setup.Setup;
-import com.koyomiji.refound.RecipeUnregisterer;
-import com.koyomiji.refound.asset.AssetFetcher;
-import com.koyomiji.refound.asset.FileInjector;
-import com.koyomiji.refound.util.JarFileUtil;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.jar.JarFile;
-import net.minecraft.client.Minecraft;
-import net.minecraft.init.Blocks;
+
 import net.minecraft.launchwrapper.Launch;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -48,6 +42,7 @@ public class ReFlect {
 
   @Mod.EventHandler
   public void init(FMLInitializationEvent event) {
+    Setup.crashIfNeedsRestart();
     proxy.init(event);
   }
 

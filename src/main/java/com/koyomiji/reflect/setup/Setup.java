@@ -15,8 +15,8 @@ import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.jar.JarFile;
-import net.minecraftforge.client.resource.VanillaResourceType;
-import net.minecraftforge.fml.client.FMLClientHandler;
+
+import javax.swing.*;
 
 public class Setup {
   private static final String CREDITS_FILENAME = "credits.txt";
@@ -32,6 +32,7 @@ public class Setup {
       "assets/minecraft/lang/en_us.json";
   private static final Multimap<String, String> LANG_KEYS_1_14_4 =
       HashMultimap.create();
+  public static boolean needsRestart = false;
 
   static {
     FILES_1_13_2.put("assets/minecraft/textures/block/acacia_trapdoor.png",
@@ -583,5 +584,24 @@ public class Setup {
     swTotal.stop();
     ReFlect.logger.info("Setup completed in " + swTotal.getElapsedInSeconds() +
                         "s.");
+
+    try {
+      UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+    } catch (ClassNotFoundException | InstantiationException |
+             IllegalAccessException | UnsupportedLookAndFeelException e) {
+      throw new RuntimeException(e);
+    }
+
+    JOptionPane.showMessageDialog(
+            null, "ReFlect has been set up successfully. Please restart the game.",
+            "ReFlect", JOptionPane.INFORMATION_MESSAGE);
+
+    needsRestart = true;
+  }
+
+  public static void crashIfNeedsRestart() {
+    if (needsRestart) {
+      throw new IntentionalSetupException("This is an intentional crash to force the game to restart. Please restart the game.");
+    }
   }
 }
