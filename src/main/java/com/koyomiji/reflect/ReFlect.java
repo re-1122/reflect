@@ -19,7 +19,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import org.apache.logging.log4j.Logger;
 
-@Mod(modid = ReFlect.MODID, dependencies = "required-after:refound")
+@Mod(modid = ReFlect.MODID, dependencies = "required-after:refound@[0.2.0,)")
 public class ReFlect {
   public static final String MODID = "reflect";
   @Mod.Instance public static ReFlect instance;
