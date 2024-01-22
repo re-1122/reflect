@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "axis=none": {
+      "model": "reflect:oak_stripped_wood"
+    },
+    "axis=y": {
+      "model": "reflect:oak_stripped_wood"
+    },
+    "axis=z": {
+      "model": "reflect:oak_stripped_wood",
+      "x": 90
+    },
+    "axis=x": {
+      "model": "reflect:oak_stripped_wood",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

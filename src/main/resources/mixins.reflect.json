@@ -1,0 +1,14 @@
+{
+  "compatibilityLevel": "JAVA_8",
+  "package": "com.koyomiji.reflect.mixin",
+  "refmap": "refmap.reflect.json",
+  "mixins": [
+    "MixinBlockWall",
+    "MixinItemAxe"
+  ],
+  "client": [
+    "MixinBlockModelShapes",
+    "MixinGuiEditSign"
+  ],
+  "server": []
+}

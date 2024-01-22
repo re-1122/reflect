@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:end_bricks",
+      "data": 0
+    }
+  },
+  "result": {
+    "count": 4,
+    "item": "reflect:end_brick_stairs"
+  }
+}

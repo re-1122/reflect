@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "axis=none": {
+      "model": "reflect:birch_wood"
+    },
+    "axis=y": {
+      "model": "reflect:birch_wood"
+    },
+    "axis=z": {
+      "model": "reflect:birch_wood",
+      "x": 90
+    },
+    "axis=x": {
+      "model": "reflect:birch_wood",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

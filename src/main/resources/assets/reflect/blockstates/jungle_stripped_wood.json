@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "axis=none": {
+      "model": "reflect:jungle_stripped_wood"
+    },
+    "axis=y": {
+      "model": "reflect:jungle_stripped_wood"
+    },
+    "axis=z": {
+      "model": "reflect:jungle_stripped_wood",
+      "x": 90
+    },
+    "axis=x": {
+      "model": "reflect:jungle_stripped_wood",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

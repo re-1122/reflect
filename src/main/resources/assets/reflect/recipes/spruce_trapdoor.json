@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "reflect:wooden_trapdoor",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:planks",
+      "data": 1
+    }
+  },
+  "result": {
+    "item": "reflect:spruce_trapdoor",
+    "count": 2
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=bottom": {
+      "model": "reflect:half_slab_red_sandstone_cut"
+    },
+    "half=top": {
+      "model": "reflect:upper_slab_red_sandstone_cut"
+    }
+  }
+}

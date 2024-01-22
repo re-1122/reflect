@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "reflect:wooden_button",
+  "pattern": [
+    "#"
+  ],
+  "key": {
+    "#": [
+      {
+        "item": "minecraft:planks",
+        "data": 1
+      }
+    ]
+  },
+  "result": {
+    "item": "reflect:spruce_button"
+  }
+}

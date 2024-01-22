@@ -1,0 +1,51 @@
+package com.koyomiji.reflect.type;
+
+import net.minecraft.block.material.MapColor;
+import net.minecraft.util.IStringSerializable;
+
+public enum EndStoneBrickType implements IStringSerializable {
+  DEFAULT(0, MapColor.SAND, "end_brick", "default");
+
+  private static final EndStoneBrickType[] META_LOOKUP =
+      new EndStoneBrickType[values().length];
+  private final int meta;
+  private final String name;
+  private final String translationKey;
+  private final MapColor mapColor;
+
+  EndStoneBrickType(int meta, MapColor mapColor, String name) {
+    this(meta, mapColor, name, name);
+  }
+
+  EndStoneBrickType(int meta, MapColor mapColor, String name,
+                    String translationKey) {
+    this.meta = meta;
+    this.name = name;
+    this.translationKey = translationKey;
+    this.mapColor = mapColor;
+  }
+
+  public int getMetadata() { return this.meta; }
+
+  public MapColor getMapColor() { return this.mapColor; }
+
+  public String toString() { return this.name; }
+
+  public static EndStoneBrickType byMetadata(int meta) {
+    if (meta < 0 || meta >= META_LOOKUP.length || META_LOOKUP[meta] == null) {
+      meta = 0;
+    }
+
+    return META_LOOKUP[meta];
+  }
+
+  public String getName() { return this.name; }
+
+  public String getTranslationKey() { return this.translationKey; }
+
+  static {
+    for (EndStoneBrickType type : values()) {
+      META_LOOKUP[type.getMetadata()] = type;
+    }
+  }
+}

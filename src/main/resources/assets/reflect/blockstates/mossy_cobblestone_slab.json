@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=bottom": {
+      "model": "reflect:half_slab_mossy_cobblestone"
+    },
+    "half=top": {
+      "model": "reflect:upper_slab_mossy_cobblestone"
+    }
+  }
+}

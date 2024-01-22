@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "axis=none": {
+      "model": "reflect:acacia_wood"
+    },
+    "axis=y": {
+      "model": "reflect:acacia_wood"
+    },
+    "axis=z": {
+      "model": "reflect:acacia_wood",
+      "x": 90
+    },
+    "axis=x": {
+      "model": "reflect:acacia_wood",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

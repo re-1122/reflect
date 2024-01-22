@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "reflect:smooth_stone",
+      "data": 3
+    }
+  },
+  "result": {
+    "count": 6,
+    "item": "reflect:smooth_stone_slab",
+    "data": 3
+  }
+}

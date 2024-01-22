@@ -1,0 +1,6 @@
+{
+  "parent": "reflect:block/orientable_trapdoor_open",
+  "textures": {
+    "texture": "reflect:blocks/spruce_trapdoor"
+  }
+}
