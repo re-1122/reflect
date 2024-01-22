@@ -527,6 +527,8 @@ public class Setup {
                             sw.getElapsedInSeconds() + "s.");
       }
 
+      sw.start();
+
       String langEnUs1_14_4 =
           new String(JarFileUtil.readFile(client1_14_4, LANG_EN_US_1_14_4),
                      StandardCharsets.UTF_8);
@@ -547,7 +549,12 @@ public class Setup {
       }
 
       langEnUs = RawLanguageMap.stringify(langMap);
+
+      sw.stop();
+      ReFlect.logger.info("Generated " + LANG_EN_US + " in " + sw.getElapsedInSeconds() + "s.");
+
       assetInjector.add(LANG_EN_US, langEnUs.getBytes(StandardCharsets.UTF_8));
+      cg.add(Assets.client1_14_4, LANG_EN_US);
     } catch (IOException e) {
       throw new RuntimeException(e);
     }
@@ -576,7 +583,5 @@ public class Setup {
     swTotal.stop();
     ReFlect.logger.info("Setup completed in " + swTotal.getElapsedInSeconds() +
                         "s.");
-
-    FMLClientHandler.instance().refreshResources(VanillaResourceType.LANGUAGES);
   }
 }
