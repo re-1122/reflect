@@ -10,6 +10,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.jar.JarFile;
 
+import com.koyomiji.refound.setup.SetupQueue;
 import net.minecraft.launchwrapper.Launch;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -36,13 +37,12 @@ public class ReFlect {
     isDeobfuscatedEnvironment =
         (boolean)Launch.blackboard.get("fml.deobfuscatedEnvironment");
 
-    Setup.setup();
     proxy.preInit(event);
+    SetupQueue.addSetupProcess(new Setup());
   }
 
   @Mod.EventHandler
   public void init(FMLInitializationEvent event) {
-    Setup.crashIfNeedsRestart();
     proxy.init(event);
   }
 

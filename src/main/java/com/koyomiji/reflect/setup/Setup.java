@@ -7,6 +7,7 @@ import com.koyomiji.reflect.ReFlect;
 import com.koyomiji.refound.asset.AssetFetcher;
 import com.koyomiji.refound.asset.AssetIdentifier;
 import com.koyomiji.refound.asset.FileInjector;
+import com.koyomiji.refound.setup.ISetupProcess;
 import com.koyomiji.refound.util.IOUtil;
 import com.koyomiji.refound.util.JarFileUtil;
 import java.io.IOException;
@@ -18,7 +19,7 @@ import java.util.jar.JarFile;
 
 import javax.swing.*;
 
-public class Setup {
+public class Setup implements ISetupProcess {
   private static final String CREDITS_FILENAME = "credits.txt";
 
   private static final Map<String, String> FILES_1_13_2 = Maps.newHashMap();
@@ -32,7 +33,6 @@ public class Setup {
       "assets/minecraft/lang/en_us.json";
   private static final Multimap<String, String> LANG_KEYS_1_14_4 =
       HashMultimap.create();
-  public static boolean needsRestart = false;
 
   static {
     FILES_1_13_2.put("assets/minecraft/textures/block/acacia_trapdoor.png",
@@ -480,12 +480,25 @@ public class Setup {
     return result;
   }
 
-  public static void setup() {
-    FileInjector assetInjector = new FileInjector(ReFlect.modFile);
+  @Override
+  public String getModID() {
+    return ReFlect.MODID;
+  }
 
-    if (assetInjector.exists(CREDITS_FILENAME)) {
-      return;
-    }
+  @Override
+  public boolean needsSetup() {
+    FileInjector assetInjector = new FileInjector(ReFlect.modFile);
+    return !assetInjector.exists(CREDITS_FILENAME);
+  }
+
+  @Override
+  public boolean needsRestart() {
+    return true;
+  }
+
+  @Override
+  public void setup() {
+    FileInjector assetInjector = new FileInjector(ReFlect.modFile);
 
     ReFlect.logger.info("Beginning setup...");
     Stopwatch swTotal = new Stopwatch();
@@ -595,13 +608,5 @@ public class Setup {
     JOptionPane.showMessageDialog(
             null, "ReFlect has been set up successfully. Please restart the game.",
             "ReFlect", JOptionPane.INFORMATION_MESSAGE);
-
-    needsRestart = true;
-  }
-
-  public static void crashIfNeedsRestart() {
-    if (needsRestart) {
-      throw new IntentionalSetupException("This is an intentional crash to force the game to restart. Please restart the game.");
-    }
   }
 }
