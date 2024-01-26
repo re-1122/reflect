@@ -27,23 +27,33 @@ public abstract class CommonProxy {
   public void preInit(FMLPreInitializationEvent event) {
     RecipeUnregisterer.unregisterRecipe(
         new ResourceLocation("minecraft:trapdoor"));
+    RecipeUnregisterer.unregisterAdvancement(new ResourceLocation("minecraft:recipes/redstone/trapdoor"));
     RecipeUnregisterer.unregisterRecipe(
         new ResourceLocation("minecraft:wooden_pressure_plate"));
+      RecipeUnregisterer.unregisterAdvancement(new ResourceLocation("minecraft:recipes/redstone/wooden_pressure_plate"));
     RecipeUnregisterer.unregisterRecipe(
         new ResourceLocation("minecraft:wooden_button"));
+      RecipeUnregisterer.unregisterAdvancement(new ResourceLocation("minecraft:recipes/redstone/wooden_button"));
     RecipeUnregisterer.unregisterRecipe(new ResourceLocation("minecraft:sign"));
+    RecipeUnregisterer.unregisterAdvancement(new ResourceLocation("minecraft:recipes/decorations/sign"));
     RecipeUnregisterer.unregisterRecipe(
         new ResourceLocation("minecraft:stone_slab"));
+    RecipeUnregisterer.unregisterAdvancement(new ResourceLocation("minecraft:recipes/building_blocks/stone_slab"));
     RecipeUnregisterer.unregisterRecipe(
         new ResourceLocation("minecraft:sandstone_slab"));
+    RecipeUnregisterer.unregisterAdvancement(new ResourceLocation("minecraft:recipes/building_blocks/sandstone_slab"));
     RecipeUnregisterer.unregisterRecipe(
         new ResourceLocation("minecraft:red_sandstone_slab"));
+    RecipeUnregisterer.unregisterAdvancement(new ResourceLocation("minecraft:recipes/building_blocks/red_sandstone_slab"));
     RecipeUnregisterer.unregisterRecipe(
         new ResourceLocation("minecraft:stone_brick_slab"));
+    RecipeUnregisterer.unregisterAdvancement(new ResourceLocation("minecraft:recipes/building_blocks/stone_brick_slab"));
     RecipeUnregisterer.unregisterRecipe(
         new ResourceLocation("minecraft:stone_brick_stairs"));
+    RecipeUnregisterer.unregisterAdvancement(new ResourceLocation("minecraft:recipes/building_blocks/stone_brick_stairs"));
     RecipeUnregisterer.unregisterRecipe(
         new ResourceLocation("minecraft:nether_brick_fence"));
+    RecipeUnregisterer.unregisterAdvancement(new ResourceLocation("minecraft:recipes/decorations/nether_brick_fence"));
 
     Blocks.WOODEN_BUTTON.setTranslationKey(
         I18nUtil.join(ReFlect.MODID, "oak_button"));
